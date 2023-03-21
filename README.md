@@ -9,6 +9,10 @@ az account show --query id
 ```
 ### Create Azure AD Service Principal
 ```
+Multiple lines in terminal are separated with “\”
+In Windows multiple lines are separated with “^”
+```
+```
 az ad sp create-for-rbac \
   --name="Terraform Service Principal" \
   --role="Contributor" \
