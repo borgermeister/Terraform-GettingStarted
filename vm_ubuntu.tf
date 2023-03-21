@@ -42,7 +42,7 @@ resource "azurerm_linux_virtual_machine" "vm-azu-ubuntu" {
   secure_boot_enabled             = false
   encryption_at_host_enabled      = false
   disable_password_authentication = false
-  admin_username                  = "netsecadmin"
+  admin_username                  = "netsecadmin-ubuntu"
   admin_password                  = random_password.netsecadmin-ubuntu.result
 
   network_interface_ids = [
