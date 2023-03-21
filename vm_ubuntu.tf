@@ -34,11 +34,11 @@ resource "azurerm_network_interface" "nic-azu-ubuntu" {
 
 # Create VM
 resource "azurerm_linux_virtual_machine" "vm-azu-ubuntu" {
-  name                            = "vm-azu-ubuntu"
+  name                            = "azu-ubuntu"
   size                            = "Standard_B2ms"
   resource_group_name             = "rg-servers"
   location                        = var.location
-  computer_name                   = "vm-azu-ubuntu"
+  computer_name                   = "azu-ubuntu"
   secure_boot_enabled             = false
   encryption_at_host_enabled      = false
   disable_password_authentication = false
@@ -59,7 +59,7 @@ resource "azurerm_linux_virtual_machine" "vm-azu-ubuntu" {
   }
 
   os_disk {
-    name                 = "vm-azu-ubuntu_OsDisk"
+    name                 = "azu-ubuntu_OsDisk"
     disk_size_gb         = 30
     caching              = "ReadWrite"
     storage_account_type = "Premium_LRS"
