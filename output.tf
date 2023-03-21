@@ -10,6 +10,6 @@ output "pip-azu-windows" {
   value = azurerm_public_ip.pip-azu-windows.ip_address
 }
 
-output "pip6-azu-ubuntu" {
+output "pip6-azu-windows" {
   value = azurerm_public_ip.pip6-azu-windows.ip_address
 }
