@@ -33,7 +33,7 @@ resource "azurerm_network_interface" "nic-azu-windows" {
 
 # Create VM
 resource "azurerm_windows_virtual_machine" "vm-azu-windows" {
-  name                       = "azu-windows"
+  name                       = "vm-azu-windows"
   size                       = "Standard_B4ms"
   resource_group_name        = azurerm_resource_group.rg["server"].name
   location                   = azurerm_resource_group.rg["server"].location

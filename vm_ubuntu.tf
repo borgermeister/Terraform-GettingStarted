@@ -19,7 +19,7 @@ resource "azurerm_network_interface" "nic-azu-ubuntu" {
     name                          = "ipconfigv4"
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.subnet["server01"].id
-    # public_ip_address_id          = azurerm_public_ip.pip-azu-ubuntu.id
+    public_ip_address_id          = azurerm_public_ip.pip-azu-ubuntu.id
   }
   ip_configuration {
     name                          = "ipconfigv6"
@@ -27,17 +27,17 @@ resource "azurerm_network_interface" "nic-azu-ubuntu" {
     private_ip_address_allocation = "Dynamic"
     private_ip_address_version    = "IPv6"
     subnet_id                     = azurerm_subnet.subnet["server01"].id
-    # public_ip_address_id          = azurerm_public_ip.pip6-azu-ubuntu.id
+    public_ip_address_id          = azurerm_public_ip.pip6-azu-ubuntu.id
   }
   tags = var.tags
 }
 
 # Create VM
 resource "azurerm_linux_virtual_machine" "vm-azu-ubuntu" {
-  name                            = "azu-ubuntu"
+  name                            = "vm-azu-ubuntu"
   size                            = "Standard_B2ms"
-  resource_group_name             = "rg-servers"
-  location                        = var.location
+  resource_group_name             = azurerm_resource_group.rg["server"].name
+  location                        = azurerm_resource_group.rg["server"].location
   computer_name                   = "azu-ubuntu"
   secure_boot_enabled             = false
   encryption_at_host_enabled      = false

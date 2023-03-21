@@ -1,9 +1,9 @@
 module "vm-azu-ubuntu01" {
   source = "./vm"
 
-  rg_name     = azurerm_resource_group.rg["server"].name
-  rg_location = azurerm_resource_group.rg["server"].location
-  subnet_id   = azurerm_subnet.subnet["server01"].id
+  rg_name          = azurerm_resource_group.rg["server"].name
+  rg_location      = azurerm_resource_group.rg["server"].location
+  subnet_id        = azurerm_subnet.subnet["server01"].id
   vm_instance_size = "Standard_B2ms"
   vm_os = {
     publisher = "canonical"
