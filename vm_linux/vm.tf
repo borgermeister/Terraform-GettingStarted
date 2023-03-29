@@ -18,6 +18,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   size                            = var.vm_instance_size
   resource_group_name             = var.rg_name
   location                        = var.rg_location
+  allow_extension_operations      = false
   computer_name                   = var.vm_name
   admin_username                  = var.vm_admin_user
   admin_password                  = var.vm_admin_password

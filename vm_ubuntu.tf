@@ -41,7 +41,8 @@ resource "azurerm_linux_virtual_machine" "vm-azu-ubuntu" {
   computer_name                   = "azu-ubuntu"
   secure_boot_enabled             = false
   encryption_at_host_enabled      = false
-  disable_password_authentication = false
+  allow_extension_operations      = false
+  disable_password_authentication = true
   admin_username                  = "netsecadmin-ubuntu"
   admin_password                  = random_password.netsecadmin-ubuntu.result
 

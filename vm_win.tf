@@ -39,7 +39,8 @@ resource "azurerm_windows_virtual_machine" "vm-azu-windows" {
   location                   = azurerm_resource_group.rg["server"].location
   computer_name              = "azu-windows"
   secure_boot_enabled        = false
-  encryption_at_host_enabled = false
+  encryption_at_host_enabled = true
+  allow_extension_operations = false
   admin_username             = "netsecadmin-windows"
   admin_password             = random_password.netsecadmin-windows.result
   patch_assessment_mode      = "AutomaticByPlatform"

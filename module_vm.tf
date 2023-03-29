@@ -1,5 +1,5 @@
 module "vm-azu-ubuntu01" {
-  source = "./vm"
+  source = "./modules/vm_linux"
 
   rg_name          = azurerm_resource_group.rg["server"].name
   rg_location      = azurerm_resource_group.rg["server"].location
