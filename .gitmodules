@@ -1,3 +1,4 @@
 [submodule "modules"]
 	path = modules
 	url = git@github.com:borgermeister/terraform_modules.git
+	branch = main
