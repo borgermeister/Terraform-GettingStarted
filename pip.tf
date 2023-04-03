@@ -1,11 +1,11 @@
-# Public IPv4 for 'vm-azu-ubuntu'
-resource "azurerm_public_ip" "pip-azu-ubuntu" {
-  name                = "pip-azu-ubuntu"
+# Public IPv4 for 'vm-azu-ubuntu02'
+resource "azurerm_public_ip" "pip-azu-ubuntu02" {
+  name                = "pip-azu-ubuntu02"
   resource_group_name = azurerm_resource_group.rg["server"].name
   location            = azurerm_resource_group.rg["server"].location
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = lower("${var.prefix}-azu-ubuntu")
+  domain_name_label   = lower("azu-ubuntu02-${var.prefix}")
   ip_tags = {
     RoutingPreference = "Internet"
   }
@@ -14,28 +14,28 @@ resource "azurerm_public_ip" "pip-azu-ubuntu" {
   tags = var.tags
 }
 
-# Public IPv6 for 'vm-azu-ubuntu'
-resource "azurerm_public_ip" "pip6-azu-ubuntu" {
-  name                = "pip6-azu-ubuntu"
+# Public IPv6 for 'vm-azu-ubuntu02'
+resource "azurerm_public_ip" "pip6-azu-ubuntu02" {
+  name                = "pip6-azu-ubuntu02"
   resource_group_name = azurerm_resource_group.rg["server"].name
   location            = azurerm_resource_group.rg["server"].location
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = lower("${var.prefix}-azu-ubuntu-v6")
+  domain_name_label   = lower("azu-ubuntu02-v6-${var.prefix}")
   ip_version          = "IPv6"
   zones               = [1, 2, 3]
 
   tags = var.tags
 }
 
-# Public IPv4 for 'vm-azu-windows'
-resource "azurerm_public_ip" "pip-azu-windows" {
-  name                = "pip-azu-windows"
+# Public IPv4 for 'vm-azu-windoze02'
+resource "azurerm_public_ip" "pip-azu-windoze02" {
+  name                = "pip-azu-windoze02"
   resource_group_name = azurerm_resource_group.rg["server"].name
   location            = azurerm_resource_group.rg["server"].location
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = lower("${var.prefix}-azu-windows")
+  domain_name_label   = lower("azu-windoze02-${var.prefix}")
   ip_tags = {
     RoutingPreference = "Internet"
   }
@@ -44,14 +44,14 @@ resource "azurerm_public_ip" "pip-azu-windows" {
   tags = var.tags
 }
 
-# Public IPv6 for 'vm-azu-windows'
-resource "azurerm_public_ip" "pip6-azu-windows" {
-  name                = "pip6-azu-windows"
+# Public IPv6 for 'vm-azu-windoze02'
+resource "azurerm_public_ip" "pip6-azu-windoze02" {
+  name                = "pip6-azu-windoze02"
   resource_group_name = azurerm_resource_group.rg["server"].name
   location            = azurerm_resource_group.rg["server"].location
   allocation_method   = "Static"
   sku                 = "Standard"
-  domain_name_label   = lower("${var.prefix}-azu-windows-v6")
+  domain_name_label   = lower("azu-windoze02-v6-${var.prefix}")
   ip_version          = "IPv6"
   zones               = [1, 2, 3]
 

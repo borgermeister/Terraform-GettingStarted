@@ -15,6 +15,9 @@ desktop.ini
 *.tfstate
 *.tfstate.*
 
+# Terraform tfplan files
+*tfplan*
+
 # Terraform lock files
 *.terraform.lock.*
 
