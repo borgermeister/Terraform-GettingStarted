@@ -17,7 +17,7 @@ locals {
   vnet = {
     azure01 = {
       name          = lower("vnet-${var.prefix}-azure01")
-      address_space = ["172.16.0.0/24", "fd54:544b:bef7::/48"]
+      address_space = ["172.16.0.0/16", "fd54:544b:bef7::/48"]
       rg            = azurerm_resource_group.rg["infrastructure"]
     }
   }

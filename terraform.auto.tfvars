@@ -10,4 +10,4 @@ tags = {
   Environment    = "Dev"
 }
 
-prefix = "Demo"
+prefix = "dev"
